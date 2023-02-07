@@ -19,3 +19,32 @@
   package = "netlify-plugin-hugo-cache-resources"
   [plugins.inputs]
     debug = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Content-Security-Policy = '''
+      default-src 'self';
+      connect-src 'self' www.netlifystatus.com;
+      font-src 'self'fonts.gstatic.com;
+      frame-src 'self' identity.netlify.com;
+      img-src 'self' blob: a.tile.openstreetmap.org b.tile.openstreetmap.org c.tile.openstreetmap.org cdnjs.cloudflare.com data: c.disquscdn.com referrer.disqus.com wowchemy.com raw.githubusercontent.com s.gravatar.com www.gstatic.com;
+      manifest-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' identity.netlify.com www.gstatic.com;
+      style-src 'self' 'unsafe-inline' fonts.googleapis.com c.disquscdn.com;
+      prefetch-src 'self';
+      form-action 'none';
+      frame-ancestors 'none';
+      object-src 'none';
+      base-uri 'none';
+      upgrade-insecure-requests;'''
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy	= "strict-origin-when-cross-origin"
+    Feature-Policy = "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'"
+    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+    Cross-Origin-Embedder-Policy-Report-Only = "require-corp; report-to='default'"
+    Cross-Origin-Opener-Policy-Report-Only = "same-origin; report-to='default'"
+    Cross-Origin-Resource-Policy = "same-site"
