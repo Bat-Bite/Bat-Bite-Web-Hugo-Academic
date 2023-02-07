@@ -31,7 +31,7 @@
       frame-src 'self' www.google.com identity.netlify.com;
       img-src 'self' blob: cdnjs.cloudflare.com data: referrer.disqus.com s.gravatar.com www.gstatic.com;
       manifest-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' identity.netlify.com www.gstatic.com cdn.jsdelivr.net;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' identity.netlify.com www.gstatic.com cdn.jsdelivr.net buttons.github.io/buttons.js;
       style-src 'self' 'unsafe-inline' cdn.jsdelivr.net fonts.googleapis.com;
       prefetch-src 'self';
       form-action 'none';
